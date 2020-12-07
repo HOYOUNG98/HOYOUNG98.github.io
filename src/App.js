@@ -1,13 +1,13 @@
 import React from "react";
 
 import { Header } from "./components/header";
-import { Blog } from "./components/blogs";
+import { BlogList } from "./components/blogs";
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <Blog></Blog>
+      <BlogList></BlogList>
     </div>
   );
 }

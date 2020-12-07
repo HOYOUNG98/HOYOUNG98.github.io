@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-import md1 from "../blogs/1.md";
+import pmd1 from "../blogs/preview1.md";
+import pmd2 from "../blogs/preview2.md";
 
-export const Blog = () => {
-  const [text, setText] = useState(0);
+import "../styles/blog.css";
+
+const blogList = [pmd1, pmd2];
+
+export const BlogList = () => {
+  const [textList, setTextList] = useState([]);
 
   useEffect(() => {
-    fetch(md1)
-      .then((response) => response.text())
-      .then((text) => {
-        setText(text);
-        console.log(text);
-      });
-  }, [text]);
+    blogList.forEach((blog) => {
+      fetch(blog)
+        .then((response) => response.text())
+        .then((text) => {
+          setTextList((oldList) => [...oldList, text]);
+        });
+    });
+  }, []);
 
-  console.log(text);
-  return <ReactMarkdown source={text}></ReactMarkdown>;
+  return (
+    <div className="inner">
+      {textList.map((text) => {
+        return (
+          <div className="markdown-body" id="preview">
+            <ReactMarkdown source={text}></ReactMarkdown>
+            <a href>View Full Post →</a>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
