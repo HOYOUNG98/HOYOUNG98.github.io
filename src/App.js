@@ -1,13 +1,14 @@
 import React from "react";
 
 import { Header } from "./components/header";
-import { BlogList } from "./components/blogs";
+import { BlogList, Blog } from "./components/blogs";
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <BlogList></BlogList>
+      {/*<BlogList></BlogList>*/}
+      <Blog props={{ postID: 2 }}></Blog>
     </div>
   );
 }

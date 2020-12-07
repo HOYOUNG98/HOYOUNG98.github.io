@@ -23,14 +23,34 @@ export const BlogList = () => {
 
   return (
     <div className="inner">
-      {textList.map((text) => {
+      {textList.map((text, i) => {
         return (
-          <div className="markdown-body" id="preview">
+          <div key={i} className="markdown-body" id="preview">
             <ReactMarkdown source={text}></ReactMarkdown>
-            <a href>View Full Post →</a>
+            View Full Post →
           </div>
         );
       })}
+    </div>
+  );
+};
+
+export const Blog = ({ props }) => {
+  const { postID } = props;
+  const [post, setPost] = useState("");
+  useEffect(() => {
+    const markdown = require(`../blogs/${postID}.md`);
+    fetch(markdown.default)
+      .then((response) => response.text())
+      .then((text) => {
+        setPost(text);
+      });
+  }, []);
+  return (
+    <div className="inner">
+      <div className="markdown-body" id="preview">
+        <ReactMarkdown source={post}></ReactMarkdown>
+      </div>
     </div>
   );
 };
