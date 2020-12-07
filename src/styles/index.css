@@ -3,6 +3,9 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
 .header {
@@ -10,6 +13,9 @@
   height: 50px;
   display: block;
   background-color: #101010;
+
+  position: sticky;
+  top: 0;
 }
 .inner {
   width: 680px;
