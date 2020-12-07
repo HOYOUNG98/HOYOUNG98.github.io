@@ -1,10 +1,15 @@
 import React from "react";
 
 import { Header } from "./components/header";
-import {} from "./components/blogs";
+import { Blog } from "./components/blogs";
 
 function App() {
-  return <Header></Header>;
+  return (
+    <div>
+      <Header></Header>
+      <Blog></Blog>
+    </div>
+  );
 }
 
 export default App;
