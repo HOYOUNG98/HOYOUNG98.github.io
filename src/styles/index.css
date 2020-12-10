@@ -8,6 +8,12 @@
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
 }
 
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   width: 100%;
   height: 50px;
@@ -17,6 +23,7 @@
   position: sticky;
   top: 0;
 }
+
 .inner {
   width: 680px;
   height: 100%;
@@ -30,7 +37,7 @@
   float: left;
 }
 
-.title h1 {
+.title .linkHome {
   color: white;
   height: 100%;
   display: table-cell;
@@ -62,6 +69,15 @@
   vertical-align: middle;
 }
 
-.content {
-  height: 1000px;
+/* Home */
+.mainContainer {
+  flex: 1;
+}
+
+.introContainer {
+  padding-top: 50px;
+}
+
+.introText {
+  border-bottom: none;
 }

@@ -1,19 +1,24 @@
 import React from "react";
-import { Route, Switch, Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import { Header } from "./components/header";
-import { BlogList, Blog } from "./components/blogs";
+import { BlogList } from "./components/blogs";
+import { About } from "./components/about";
 
 function App() {
   return (
-    <div>
+    <div className="wrapper">
       <Header></Header>
-      <Switch>
-        <Route exact path="/"></Route>
-        <Route path="/blog">
-          <BlogList />
-        </Route>
-      </Switch>
+      <div className="mainContainer">
+        <Switch>
+          <Route exact path="/">
+            <About />
+          </Route>
+          <Route path="/blog">
+            <BlogList />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,9 @@ export const Header = () => {
     <div className="header">
       <div className="inner">
         <div className="title">
-          <h1>Kevin Kim</h1>
+          <Link to="/" className="linkHome">
+            Kevin Kim
+          </Link>
         </div>
 
         <ul className="navigation">
