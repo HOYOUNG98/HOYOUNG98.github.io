@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { Link, useParams, Route, Switch } from "react-router-dom";
 
 import pmd1 from "../blogs/preview1.md";
 import pmd2 from "../blogs/preview2.md";
@@ -23,21 +24,31 @@ export const BlogList = () => {
 
   return (
     <div className="inner">
-      {textList.map((text, i) => {
-        return (
-          <div key={i} className="markdown-body" id="preview">
-            <ReactMarkdown source={text}></ReactMarkdown>
-            View Full Post →
-          </div>
-        );
-      })}
+      <Switch>
+        <Route exact path="/blog">
+          {textList.map((text, i) => {
+            return (
+              <div key={i + 1} className="markdown-body" id="preview">
+                <ReactMarkdown source={text}></ReactMarkdown>
+                <Link to={`/blog/${i + 1}`} onClick={() => {}}>
+                  View Full Post →
+                </Link>
+              </div>
+            );
+          })}
+        </Route>
+        <Route exact path="/blog/:postID">
+          <BlogPost />
+        </Route>
+      </Switch>
     </div>
   );
 };
 
-export const Blog = ({ props }) => {
-  const { postID } = props;
+const BlogPost = () => {
+  let { postID } = useParams();
   const [post, setPost] = useState("");
+
   useEffect(() => {
     const markdown = require(`../blogs/${postID}.md`);
     fetch(markdown.default)
@@ -45,7 +56,7 @@ export const Blog = ({ props }) => {
       .then((text) => {
         setPost(text);
       });
-  }, []);
+  }, [postID]);
   return (
     <div className="inner">
       <div className="markdown-body" id="preview">

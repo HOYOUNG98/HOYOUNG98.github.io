@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -10,7 +11,7 @@ export const Header = () => {
 
         <ul className="navigation">
           <li>
-            <a href="blog.html">Blogs</a>
+            <Link to="/blog">Blogs</Link>
           </li>
           <li>
             <a href="project.html">Projects</a>
