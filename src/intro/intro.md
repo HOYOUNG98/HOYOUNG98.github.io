@@ -1,6 +1,6 @@
-### I am Kevin. Nice to meet you.
+### Nice to meet you.
 
-I am a computer science student in RPI. I am graduating December 2020. Please enjoy my blogs on my personal studies on network security. Also, you can see my personal projects!
+Welcome! I am currently a masters Computer Science student at University of Chicago. I am focusing my studies on Data Analytics. Prior to my masters, I have earned my B.S. in Computer Science at Rensselaer Polytechnic Institute. My interest lies in various topics including A.I., Network Security, and even Software Engineering.
 
 ### Visit Me!
 
